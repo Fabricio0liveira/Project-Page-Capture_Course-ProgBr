@@ -1,0 +1,130 @@
+* {
+    /* Tirando todas as bordas por padrão do navegador. Boas práticas */
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1000px; /*Acima de 1000px o container para de estender.*/
+    margin: auto;
+}
+
+header {
+    background-color: #48c5ce;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.title {
+    font-size: 26px;
+}
+
+section {
+    padding: 20px;
+    background-image: url("../images/people.jpg");
+    background-size: cover; /*Colocando o tamanho da imagem para cobrir o tamanho exato da 'div'*/
+    overflow: hidden; /*Comando que indenpendente do que for a imagem irá preencher o que for preciso na 'div'*/
+}    
+
+.formContainer {
+    max-width: 230px;
+    background-color: #FFFFFFBB;
+    padding: 20px;
+    float: right; /* Colocando o formulário a direita na página. */
+}
+
+h2 {
+    font-size: 16px; /*'h2' de dentro do formContainer*/
+}
+
+.mb {
+    margin-bottom: 15px; /* margin-bottom */
+}
+
+input, select {
+    width: 100%;
+    box-sizing: border-box; /* Para os inputs preencherem 100% do formulário porém não saem para fora. */
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] { /*O CSS será aplicado somente para o input do tipo 'submit'*/
+    background-color: #48c5ce;
+    color: white;
+    font-weight: bold; /*Peso da fonte = colocado como negrito.*/
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; /*Três comandos acima são para tirar a aparência padrão do 'select' para todos os diferentes navegadores*/
+
+    background-image: url("../images/arrow.jpg"); /*Colocando a seta personalizada no 'select'*/
+    background-repeat: no-repeat; /*Comando para não se repetir a seta, várias vezes.*/
+
+    background-position-x: calc(100% - 10px); /*Jogando a seta para a direita*/
+    background-position-y: center; /*Também poderia fazer de outra forma*/
+    /*background-position: calc(100% - 10px) center; */
+}
+
+footer {
+    background-color: #202121;
+    padding: 40px;
+    text-align: center;
+}
+
+.picture {
+    width: 160px;
+}
+
+.description {
+    color: white;
+    display: inline-block;
+    text-align: left; /*Alinhando o texto a esquerda de acordo com imagem.*/
+    max-width: 40%; /* Largura máxima da descrição */
+    margin-left: 40px;
+}
+
+.description p, .description h3 {
+    margin-bottom: 20px;
+}
+
+.description h3 {
+    font-size: 24px;
+}
+
+@media screen and (max-width: 500px) { /* Significa que quando entrar em uma resolução abaixo de 500px ja vai ativar essas configurações. */
+    .title {
+        font-size: 20px;
+    }
+
+    .formContainer {
+        float: none;
+        margin: auto;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+    }
+
+    .picture {
+        height: 250px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .description h3{
+        font-size: 1.1rem;
+    }
+}
